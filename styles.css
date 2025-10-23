@@ -171,3 +171,6 @@ nav .item:nth-child(4):hover ~ .underline {
     touch-action: manipulation;
   }
 }
+.dropdown {
+  z-index: 10;
+}
