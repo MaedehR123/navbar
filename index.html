@@ -29,5 +29,43 @@
       <a class="item">خانه</a>
       <div class="underline"></div>
     </nav>
+
+
+
+
+
+    <script>
+  // انتخاب همه آیتم‌ها
+  document.querySelectorAll('nav .item').forEach(item => {
+    // اگر آیتم dropdown دارد
+    const dropdown = item.querySelector('.dropdown > div');
+    if (!dropdown) return;
+
+    item.addEventListener('click', e => {
+      // جلوگیری از بسته شدن سریع روی لینک‌ها
+      e.stopPropagation();
+
+      // بررسی وضعیت فعلی
+      const isOpen = dropdown.style.transform === 'translate(0)';
+
+      // بستن همه dropdownهای دیگر
+      document.querySelectorAll('nav .dropdown > div').forEach(d => {
+        d.style.transform = 'translate(-100%)';
+      });
+
+      // باز یا بسته کردن این dropdown
+      dropdown.style.transform = isOpen ? 'translate(-100%)' : 'translate(0)';
+    });
+  });
+
+  // بستن همه منوها اگر کاربر خارج از nav کلیک کرد
+  document.addEventListener('click', () => {
+    document.querySelectorAll('nav .dropdown > div').forEach(d => {
+      d.style.transform = 'translate(-100%)';
+    });
+  });
+</script>
+
   </body>
+
 </html>

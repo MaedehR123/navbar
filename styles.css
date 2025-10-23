@@ -152,25 +152,3 @@ nav .item:nth-child(4):hover ~ .underline {
   }
 }
 
-/* ✅ برای دستگاه‌هایی که hover ندارن (مثل موبایل) */
-@media (hover: none) and (pointer: coarse) {
-  /* باز کردن dropdown با فوکوس */
-  nav .item:focus-within > .dropdown > div,
-  nav .item:active > .dropdown > div {
-    translate: 0;
-  }
-
-  /* اطمینان از اینکه گزینه‌های داخل dropdown کلیک‌پذیر بمونن */
-  .dropdown a {
-    pointer-events: auto;
-  }
-
-  /* جلوگیری از بسته شدن ناگهانی */
-  nav .item > a, 
-  nav .item {
-    touch-action: manipulation;
-  }
-}
-.dropdown {
-  z-index: 10;
-}
