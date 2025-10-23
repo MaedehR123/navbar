@@ -98,3 +98,56 @@ nav .item:nth-child(3):hover ~ .underline {
 nav .item:nth-child(4):hover ~ .underline {
   translate: 300%;
 }
+
+
+
+/* 🌐 ریسپانسیو ساده با فاصله از چپ و راست */
+@media (max-width: 1024px) {
+  nav {
+    width: 90%;
+    margin: 0 auto;
+  }
+  nav .item {
+    font-size: 0.75rem;
+    padding: 0 15px;
+    height: 55px;
+    line-height: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 90%;
+    margin: 0 auto;
+  }
+  nav .item {
+    font-size: 0.7rem;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .dropdown a {
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    width: 92%;
+    margin: 0 auto;
+  }
+  nav .item {
+    font-size: 0.65rem;
+    padding: 0 8px;
+    height: 45px;
+    line-height: 45px;
+  }
+  .dropdown a {
+    height: 32px;
+    line-height: 32px;
+  }
+  .underline {
+    height: 4px;
+  }
+}
